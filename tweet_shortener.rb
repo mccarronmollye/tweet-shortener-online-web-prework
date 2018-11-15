@@ -14,8 +14,8 @@ dictionary = {
 }
 end
 
-def word_substituter(tweets)
-  tweets.split.collect do |word|
+def word_substituter(tweet)
+  tweet.split.collect do |word|
   if dictionary.keys.include?(word.downcase)
     word = dictionary[word.downcase]
     else
@@ -25,6 +25,7 @@ def word_substituter(tweets)
 end
 
 def bulk_tweet_shortener(tweets)
-word_substituter
-puts tweets
+tweets.each do |tweet|
+puts word_substituter(tweet)
+end
 end
